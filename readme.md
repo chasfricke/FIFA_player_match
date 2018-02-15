@@ -1,6 +1,7 @@
 To Do:
-* .then for BuildList
-* skill matching logic
+
+youtube keyword search api integration
+
 
 * Highlight buttons where skill has already been saved
 * Youtube Links
@@ -11,6 +12,9 @@ To Do:
 
 
 
+YouTubeAPI Tutorial:
+https://www.youtube.com/watch?v=-vH2eZAM30s
+https://github.com/FriesFlorian/viralvideos/blob/master/js/app.js
 
 
 
@@ -19,8 +23,8 @@ To Do:
 
 
 
-
-
+YouTube API Files:
+https://github.com/youtube/api-samples
 
 Search by Keyword, YouTube API:
 https://developers.google.com/youtube/v3/code_samples/javascript
