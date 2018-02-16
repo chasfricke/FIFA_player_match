@@ -6,36 +6,39 @@ let playerData;
 
 getPlayerData()
 .then(data => {
-  fifaSkillAvg.acceleration = getAvg(data, 'acceleration');
-  fifaSkillAvg.aggression = getAvg(data, 'aggression');
-  fifaSkillAvg.agility = (getAvg(data, 'agility'));
-  fifaSkillAvg.balance = (getAvg(data, 'balance'));
+  //offense
   fifaSkillAvg.ballControl = (getAvg(data, 'ballControl'));
-  fifaSkillAvg.composure = (getAvg(data, 'composure'));
   fifaSkillAvg.crossing = (getAvg(data, 'crossing'));
   fifaSkillAvg.curve = (getAvg(data, 'curve'));
   fifaSkillAvg.dribbling = (getAvg(data, 'dribbling'));
   fifaSkillAvg.finishing = (getAvg(data, 'finishing'));
   fifaSkillAvg.freeKickAccuracy = (getAvg(data, 'freeKickAccuracy'));
   fifaSkillAvg.headingAccuracy = (getAvg(data, 'headingAccuracy'));
-  fifaSkillAvg.interceptions = (getAvg(data, 'interceptions'));
-  fifaSkillAvg.jumping = (getAvg(data, 'jumping'));
   fifaSkillAvg.longPassing = (getAvg(data, 'longPassing'));
   fifaSkillAvg.longShots = (getAvg(data, 'longShots'));
-  fifaSkillAvg.marking = (getAvg(data, 'marking'));
-  fifaSkillAvg.penalties = (getAvg(data, 'penalties'));
-  fifaSkillAvg.positioning = (getAvg(data, 'positioning'));
-  fifaSkillAvg.reactions = (getAvg(data, 'reactions'));
   fifaSkillAvg.shortPassing = (getAvg(data, 'shortPassing'));
   fifaSkillAvg.penalties = (getAvg(data, 'penalties'));
   fifaSkillAvg.shotPower = (getAvg(data, 'shotPower'));
+  fifaSkillAvg.volleys = (getAvg(data, 'volleys'));
+  fifaSkillAvg.penalties = (getAvg(data, 'penalties'));
+  fifaSkillAvg.vision = (getAvg(data, 'vision'));
+  //defense
+  fifaSkillAvg.interceptions = (getAvg(data, 'interceptions'));
+  fifaSkillAvg.marking = (getAvg(data, 'marking'));
+  fifaSkillAvg.standingTackle = (getAvg(data, 'standingTackle'));
   fifaSkillAvg.slidingTackle = (getAvg(data, 'slidingTackle'));
+  //physical
+  fifaSkillAvg.aggression = getAvg(data, 'aggression');
+  fifaSkillAvg.acceleration = getAvg(data, 'acceleration');
+  fifaSkillAvg.agility = (getAvg(data, 'agility'));
+  fifaSkillAvg.balance = (getAvg(data, 'balance'));
+  fifaSkillAvg.composure = (getAvg(data, 'composure'));
+  fifaSkillAvg.jumping = (getAvg(data, 'jumping'));
+  fifaSkillAvg.positioning = (getAvg(data, 'positioning'));
+  fifaSkillAvg.reactions = (getAvg(data, 'reactions'));
   fifaSkillAvg.springSpeed = (getAvg(data, 'springSpeed'));
   fifaSkillAvg.stamina = (getAvg(data, 'stamina'));
-  fifaSkillAvg.standingTackle = (getAvg(data, 'standingTackle'));
   fifaSkillAvg.strength = (getAvg(data, 'strength'));
-  fifaSkillAvg.vision = (getAvg(data, 'vision'));
-  fifaSkillAvg.volleys = (getAvg(data, 'volleys'));
   return fifaSkillAvg;
 })
 .then(data => buildList());
@@ -64,9 +67,6 @@ function getPlayerData() {
   .catch(err => alert(err))
 }
 
-
-
-
 //User Skill Input
 let slider = document.querySelector(".slider")
 let sliderValueLabel = document.querySelector(".sliderValue")
@@ -94,8 +94,8 @@ function buildButton(skill){
     buildSkillCard(skill)
     skillSelected = skill;
   })
-  var end = document.querySelector("footer")
-  document.body.insertBefore(newButton, end);
+  var buttonContainer = document.querySelector(".skill-button-container")
+  buttonContainer.appendChild(newButton)
 }
 
 //Save Button
@@ -128,8 +128,8 @@ function buildSkillCard (skill) {
   sliderValueLabel.textContent = slider.value
 }
 
-//matchButton
-document.querySelector(".matchButton").addEventListener("click", function() {
+//match-button
+document.querySelector(".match-button").addEventListener("click", function() {
   var playerScoreDifference = playerData.reduce((acc,el) => {
     var keys = Object.keys(savedSkillScores)
     acc[el.name] = keys.reduce((acc,el2) => {
@@ -142,7 +142,7 @@ document.querySelector(".matchButton").addEventListener("click", function() {
   sortResults(playerScoreDifference);
 })
 
-
+//sort-results
 function sortResults(object){
   var list = object
   function compareNumbers(a, b) {
@@ -153,8 +153,33 @@ function sortResults(object){
 }
 
 function displayResults(results){
+  console.log(savedSkillScores)
   var matchNames = document.querySelector(".matchNames")
   var matchScores = document.querySelector(".matchScores")
+
+  var topPlayerName = document.querySelector(".player-name")
+  var topPlayerPositions = document.querySelector(".player-position")
+  var topPlayerClub = document.querySelector(".player-club")
+  var topPlayerImg = document.querySelector(".player-photo")
+
+  if (matchNames.getElementsByTagName("li").length > 0){
+    matchNames.innerHTML = "";
+    matchScores.innerHTML = "";
+    topPlayerName.innerHTML = "";
+    topPlayerPositions.innerHTML = "";
+    topPlayerClub.innerHTML = "";
+    topPlayerImg.innerHTML = "";
+  }
+  topPlayerName.innerHTML = results[0][0]
+  var topPlayerData = playerData.filter(data => data.name == results[0][0])
+
+
+  topPlayerImg.src = topPlayerData[0].photo
+    console.log(topPlayerImg)
+  topPlayerPositions.innerHTML = topPlayerData[0].preferredPositions
+  topPlayerClub.innerHTML = topPlayerData[0].club
+
+
   for (let i = 0; i < 10; i++){
     var namesLi = document.createElement("li")
     namesLi.textContent = (results[i][0])

@@ -8,10 +8,9 @@ $(function() {
             part: "snippet",
             type: "video",
             q: encodeURIComponent($("#search").val()).replace(/%20/g, "+"),
-            maxResults: 3,
-            order: "viewCount",
-            publishedAfter: "2017-01-01T00:00:00Z",
-            videoEmbeddable: true
+            maxResults: 6,
+            order: "relevance",
+            publishedAfter: "2017-01-01T00:00:00Z"
        });
        // execute the request
        request.execute(function(response) {
