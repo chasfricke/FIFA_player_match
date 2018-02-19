@@ -1,16 +1,27 @@
-body {
-  background-image: url("stadium.jpg");
-  background-size: 100vw;
-  margin-left: 1rem;
+.Site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
+.Site-content {
+  flex: 1;
+}
 
+body {
+  background-image: url("fifa_background.png");
+  background-size: 100vw;
+  font-family: Tahoma, Geneva, sans-serif;
+}
 
 h1 {
   font-size: 50px;
-  font-weight: bold;
   color: white;
-  padding: 1rem;
+  padding: 25px;
+}
+
+.title-18 {
+  color: yellow;
 }
 
 h2 {
@@ -22,42 +33,109 @@ h2 {
 h3 {
   font-size: 30px;
   padding: 1rem;
-  color: green;
+  color: yellow;
 }
 
 h4 {
   font-size: 20px;
   color: white;
+  padding-bottom: 0.25rem;
 }
 
 header {
-  background-color: black;
   height: 15vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-main {
-  background-color: rgba(0,0,0,0.6);
+li {
+  padding-bottom: 5px;
 }
 
+.title-background{
+  background-color: rgba(39,10,63,1);
+  height: 80px;
+  width: auto;
+  border-radius: 0px 0px 30px 0px ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.fifa-logo {
+  margin: 1rem;
+}
+
+.results {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.button-instructions {
+  background-color: rgba(39,10,63,1);
+  padding: 10px;
+  color: white;
+  width: 200px;
+  margin-left: 15px;
+  border-radius: 0px 15px 0px 0px;
+}
 
 .match-list-container {
-  width: 300px;
+  width: 250px;
   border-style: solid;
-  border-color: black;
-  border-width: thin;
-  background-color: rgba(255,255,255,0.6);
+  background-color: rgba(250,250,250,0.7);
   display: flex;
   flex-direction: column;
 }
 
-.player-card {
-  background-color: rgba(255,255,255,0.6);
+.top-10-label {
+  color: gray;
+}
+
+.pic-summary {
   display: flex;
-  flex-direction: row;
+  flex-grow: row;
+
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(39,10,63,0.7);;
+}
+
+.slider-value {
+  color: yellow;
+  font-weight: bolder;
+}
+
+.save {
+  width: 100px;
+  background-color: yellow;
+  margin-bottom: 15px
+}
+
+
+
+.player-card {
+  background-color: rgba(250,250,250,0.7);
+  display: flex;
+  flex-direction: column;
   width: 300px;
+}
+
+.card-title {
+font-size: 14;
+margin-top: 15px;
+margin-left: 15px;
+}
+
+.remaining-skills-list{
+  padding: 15px;
 }
 
 .match-list {
@@ -67,36 +145,45 @@ main {
   padding: 1rem;
 }
 
-.match-button{
-  margin: 1rem;
+.saved-skills-list-container{
+  background-color: rgba(250,250,250,0.7);
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
 }
 
-.slider-value-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+.saved-skills-list{
+  padding: 15px;
 }
 
-.slider-value-container button{
-  margin-left: 2rem;
+.card-header {
+  background-color: rgba(39,10,63,0.7);
+}
+.saved-skills-list{
+  color: dark-gray;
 }
 
 #results {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 15px;
 }
 
 .skill-button-container {
   padding: 0.1rem;
-  background-color: rgba(0,0,0,0.7);
-
+  background-color: rgba(250,250,250,0.7);
+  margin: 0rem 1rem 1rem 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
 }
 
 .skill-button-container button{
-  margin: 0.5rem;
-  width: 10vw;
-
+  margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+  width: 160px;
+  border-radius: 5px 5px 5px 5px ;
 }
 
 .skillgroup {
@@ -108,21 +195,29 @@ main {
 }
 
 button {
-  padding: 1
+  padding: 10px;
+  font-size: 16px;
 }
 
-.active { background-color: gray; }
+.active { background-color: yellow; }
 
-.slidecontainer {
-    width: 90%; /* Width of the outside container */
-    padding: 1rem;
+.slider-div {
+  width: 52vw;
+  margin: 12px;
+}
+
+.slider-labels{
+  display: flex;
+  flex-grow: row;
+  justify-content: space-between;
+  color: yellow;
 }
 
 /* The slider itself */
 .slider {
     -webkit-appearance: none;  /* Override default CSS styles */
     appearance: none;
-    width: 100%; /* Full-width */
+    width: 99.5%; /* Full-width */
     height: 10px; /* Specified height */
     background: #d3d3d3; /* Grey background */
     outline: none; /* Remove outline */
@@ -153,8 +248,34 @@ button {
     cursor: pointer; /* Cursor on hover */
 }
 
+aside {
+  background-color: rgba(250,250,250,0.7);
+  margin: 0px 15px 15px 15px;
+  padding: 15px;
+}
+
+.video-instructions {
+  background-color: rgba(39,10,63,1);
+  padding: 10px;
+  color: white;
+  width: 150px;
+  margin-top: 15px;
+  margin-left: 15px;
+  border-radius: 0px 15px 0px 0px;
+}
+
+
+.search-form {
+
+}
+
+.youtube-search{
+  background-color: yellow;
+  margin-top: 10px;
+}
+
 footer {
-  background-color: black;
+  background-color: rgba(39,10,63,1);
   color: white;
   padding: 2rem;
 }
