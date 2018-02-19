@@ -1,0 +1,22 @@
+{
+  "name": "p2_project_2",
+  "version": "1.0.0",
+  "description": "YouTubeAPI Tutorial: https://www.youtube.com/watch?v=-vH2eZAM30s https://github.com/FriesFlorian/viralvideos/blob/master/js/app.js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chasfricke/FIFA_player_match.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chasfricke/FIFA_player_match/issues"
+  },
+  "homepage": "https://github.com/chasfricke/FIFA_player_match#readme",
+  "devDependencies": {
+    "cypress": "^2.0.1"
+  }
+}

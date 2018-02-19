@@ -4,100 +4,36 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="reset.css">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>FIFA SKILL ENGINE</title>
+    <title>FIFA PLAYER MATCH</title>
   </head>
   <body class="Site">
     <header>
       <div class="title-background">
-        <h1>FIFA<span class="title-18">18</span> SKILL ENGINE</h1>
+        <h1>FIFA<span class="title-18">18</span> PLAYER MATCH</h1>
       </div>
       <img src="EA_Logo.png" alt="fifa badge" height="75" class="fifa-logo">
     </header>
-    <div class="Site-content">
-      <main>
-          <div class="slider-container">
-            <h3 class="skill-title"></h3>
-            <h4>FIFA AVG: <span class="skillAvg"></span></h4>
-            <h3><span class="slider-value"></span></h3>
-
-            <div class="slider-div">
-              <div class="slider-labels">
-                <p>0</p>
-                <p>100</p>
-              </div>
-              <input type="range" min="0" max="100" value="50" class=slider >
-            </div>
-            <button class="save">Save</button>
-          </div>
-          <div>
-            <div class="button-instructions">
-              <p>CLICK A SKILL TO BEGIN</p>
-            </div>
-            <div class="skill-button-container"></div>
-          </div>
-      </main>
-      <div class="results">
-        <div class="player-card">
-          <div class="player-img-selected-skills">
-          </div>
-        <div class="player-match">
-            <div class="card-header">
-              <h3><span class="player-name">PLAYER MATCH</span></h3>
-            </div>
-            <div class="pic-summary">
-              <div class="player-img">
-                <img src="profile_placeholder.jpg" alt="player photo" class="player-photo" height="100">
-              </div>
-                <ul class="card-title">
-                  <li class="player-overall"></li>
-                  <li class="player-position"></li>
-                  <li class="player-club"></li>
-                </ul>
-              </div>
-            <ul class="remaining-skills-list"></ul>
-          </div>
-        </div>
-        <div class="saved-skills-list-container">
-          <div class="card-header">
-            <h3>SAVED SKILLS</h3>
-          </div>
-          <ul class="saved-skills-list"></ul>
-        </div>
-        <div class="match-list-container">
-          <div class="card-header">
-            <h3>TOP MATCHES</h3>
-          </div>
-          <div class="match-list">
-            <div class="top10List">
-              <h4 class="top-10-label">Names</h4>
-              <ol class="matchNames"></ol>
-            </div>
-            <div>
-              <h4 class="top-10-label">% Match</h4>
-              <ul class="matchScores"></ul>
-            </div>
-          </div>
-        </div>
+    <main class="Site-content">
+      <div class="video-instructions">FEATURES</div>
+      <ul class="features-list">
+        <li>Access to all field player skill data for EA Sport's FIFA 2018</li>
+        <li>You choose the skill and desired ranking </li>
+        <li>Combine skills to find players with unique skill sets</li>
+        <li>Easily search player hightlight videos using YouTube's API</li>
+      </ul>
+      <br><br>
+      <div class="video-instructions">AUDIENCE</div>
+      <p class="audience-description">FIFA18 Skill Engine is perfect for any player looking to find a professional soccer player with a comparable skill set to their own.  Maybe you're fast, love passing in tight spaces, or are great at heading the ball, either way, we'll help you find a pro with the same game.  All you need to do is select the skills you're interested in, find your player match, and watch their highlight videos using our curated YouTube library.  Enjoy!</p>
+      <br><br>
+      <div class="enter-button-container">
+        <form class="enter-button-form" action="/app.html">
+          <input type="submit" value="ENTER" class="enter-button"/>
+        </form>
       </div>
-      <div class="video-instructions">PLAYER VIDEOS</div>
-      <aside class="search-form">
-        <div class="row">
-          <div class="input-form">
-            <form action="#">
-              <input type="text" id="search" placeholder="Messi dribbling..." autocomplete="off" class="form-control" />
-              <p><input type="submit" value="Search" class="youtube-search" class="form-control btn btn-primary w100"></p>
-            </form>
-          </div>
-          <div id="results"></div>
-        </div>
-      </aside>
-    </div>
+    </main>
     <footer>
       <small>Copyright 2018</small>
     </footer>
     <script type="text/javascript" src="app.js"></script>
-    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-    <script src="youtube.js"></script>
-    <script src="https://apis.google.com/js/client.js?onload=init"></script>
   </body>
 </html>
