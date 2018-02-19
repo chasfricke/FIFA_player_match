@@ -1,0 +1,32 @@
+[debug] [2018-02-19T20:21:39.846Z] ----------------------------------------------------------------------
+[debug] [2018-02-19T20:21:39.849Z] Command:       /usr/local/Cellar/node/8.7.0/bin/node /usr/local/bin/firebase deploy
+[debug] [2018-02-19T20:21:39.849Z] CLI Version:   3.14.0
+[debug] [2018-02-19T20:21:39.850Z] Platform:      darwin
+[debug] [2018-02-19T20:21:39.850Z] Node Version:  v8.7.0
+[debug] [2018-02-19T20:21:39.850Z] Time:          Mon Feb 19 2018 13:21:39 GMT-0700 (MST)
+[debug] [2018-02-19T20:21:39.850Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-02-19T20:21:39.868Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-02-19T20:21:39.869Z] > authorizing via signed-in user
+[debug] [2018-02-19T20:21:39.871Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-02-19T20:21:39.871Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/BWFr8YTwRNETHq_areFR-e_MZCvMlRcdo0it4BxdOJ8',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Mon Feb 19 2018 13:21:39 GMT-0700 (MST)
+[debug] [2018-02-19T20:21:40.197Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-19T20:21:40.215Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/fifa-player-match  
+ Mon Feb 19 2018 13:21:40 GMT-0700 (MST)
+[debug] [2018-02-19T20:21:40.612Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-19T20:21:40.613Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/fifa-player-match/tokens  
+ Mon Feb 19 2018 13:21:40 GMT-0700 (MST)
+[debug] [2018-02-19T20:21:40.975Z] <<< HTTP RESPONSE 200
+[info] 1
+[info] 
+[info] === Deploying to 'fifa-player-match'...
+[info] 
+[info] i  deploying hosting
+[info] i  hosting: preparing . directory for upload...
+[debug] [2018-02-19T20:22:00.308Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/fifa-player-match/uploads/-L5jieXpjHfAavfPPtL8?fileCount=21301&message=  
+ Mon Feb 19 2018 13:22:00 GMT-0700 (MST)
