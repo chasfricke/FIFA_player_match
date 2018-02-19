@@ -1,5 +1,6 @@
 {
   "projects": {
-    "api key": "fifa-player-match"
+    "api key": "fifa-player-match",
+    "default": "fifa-player-match"
   }
 }
